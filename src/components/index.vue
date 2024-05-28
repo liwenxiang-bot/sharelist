@@ -3,6 +3,11 @@
   <n-grid class="notice" x-gap="12" :cols="1" :style="theme()">
     <n-gi>
       <div style="display: flex;flex-direction: row-reverse;margin: 10px 10px 0 0;">
+        <n-switch v-model:value="active" size="medium">
+          <template #icon>
+            <DarkModeOutlined />
+          </template>
+        </n-switch>
         <n-switch :default-value="isDarkTheme" @update:value="(v) => $emit('changeIsDarkTheme', v)" >
           <template #checked-icon>
             <DarkModeOutlined />
