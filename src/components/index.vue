@@ -5,10 +5,10 @@
       <div style="display: flex;flex-direction: row-reverse;margin: 10px 10px 0 0;">
         <n-switch :default-value="isDarkTheme" @update:value="(v) => $emit('changeIsDarkTheme', v)" >
           <template #checked-icon>
-            <DarkModeOutlined />
+            <SvgIcon name="DarkModeOutlined"></SvgIcon>
           </template>
           <template #unchecked-icon>
-            🤔
+            <SvgIcon name="DarkModeTwotone"></SvgIcon>
           </template>
         </n-switch>
       </div>
@@ -68,8 +68,8 @@ function uniqueArrayObjects(arr) {
 const isDev = import.meta.env.MODE === 'development'
 
 import axios from 'axios';
-import { DarkModeTwotone, DarkModeOutlined } from '@vicons/material'
 import { useLoadingBar } from 'naive-ui'
+
 export default {
   props: {
     isDarkTheme: {
@@ -77,10 +77,7 @@ export default {
       default: false
     }
   },
-  components: {
-    DarkModeTwotone,
-    DarkModeOutlined
-  },
+  components: { },
   data() {
     return {
       itemslist: [],
