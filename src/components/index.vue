@@ -8,7 +8,7 @@
             <DarkModeOutlined />
           </template>
           <template #unchecked-icon>
-            <DarkModeTwotone />
+            🤔
           </template>
         </n-switch>
       </div>
