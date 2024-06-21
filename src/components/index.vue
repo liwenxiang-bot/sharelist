@@ -47,7 +47,7 @@
             :steps="4"
             :color="item.color"
             :percent="item.bai"
-            :track-color="item.labelColor"
+            trackColor="rgb(var(--green-4))"
             stroke-width="30"
           />
         </div>
@@ -300,6 +300,9 @@ export default {
   position: relative;
   color: #8f8f8f;
   font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .n-switch {
