@@ -63,6 +63,7 @@
   >
     上拉加载更多
   </n-divider>
+  <n-back-top :right="20" :bottom="20" />
 </template>
 <script lang="ts">
 function uniqueArrayObjects(arr) {
