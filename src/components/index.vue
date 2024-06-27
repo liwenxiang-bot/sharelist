@@ -25,13 +25,12 @@
     <n-grid-item class="cardclss" v-for="item in itemslist" :key="item.carID">
       <n-card
         size="small"
-        content-style="boxclass"
-        :content-class="
-          'boxclass ' + (item.isPlus ? 'pluscolor' : 'nopluscolor')
-        "
         @click="redirectTo(item.carID)"
       >
-        <div class="type" :style="{ background: item.labelColor }">
+        <div
+          class="type"
+          :style="{ background: getComputedBackgroundColor(item.isPlus) }"
+        >
           {{ item.label != "" ? item.label : "NO" }}
         </div>
 
@@ -130,6 +129,13 @@ export default {
   },
 
   methods: {
+    getComputedBackgroundColor(isPlus) {
+      if (isPlus) {
+        return "linear-gradient(to right, #FFD700, #E6B800)"; 
+      } else {
+        return "linear-gradient(to right, #32a852, #117a41)"; 
+      }
+    },
     handleVisibilityChange() {
       if (!document.hidden) {
         /**
@@ -316,22 +322,16 @@ export default {
   padding: 10px 10px;
 }
 
-.boxclass {
-  border-radius: 10px !important;
-  border: 3px solid transparent;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+.cardclss {
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  border-radius: 5px; /* 保持圆角 */
+  cursor: pointer; /* 添加手型光标 */
 }
 
-.boxclass:hover {
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.pluscolor:hover {
-  border: 3px solid #a07be6;
-}
-
-.nopluscolor:hover {
-  border: 3px solid #24d4ae;
+.cardclss:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时更大的阴影 */
+  transform: translateY(-3px); /* 上浮效果 */
 }
 
 .cardclss .title {
@@ -345,15 +345,9 @@ export default {
   margin-bottom: 20px;
 }
 
-.cardclss {
-  border-radius: 10px !important;
-}
-
 .cardclss .n-card {
   max-width: 100%;
-  border: 0 !important;
   text-align: left;
-  --n-close-border-radius: 10px !important;
 }
 
 .arco-progress-steps-item {
