@@ -29,7 +29,7 @@
       >
         <div
           class="type"
-          :style="{ background: getComputedBackgroundColor(item.isPlus) }"
+          :style="{ background: item.labelColor }"
         >
           {{ item.label != "" ? item.label : "NO" }}
         </div>
@@ -129,13 +129,6 @@ export default {
   },
 
   methods: {
-    getComputedBackgroundColor(isPlus) {
-      if (isPlus) {
-        return "linear-gradient(to right, #FFD700, #E6B800)"; 
-      } else {
-        return "linear-gradient(to right, #32a852, #117a41)"; 
-      }
-    },
     handleVisibilityChange() {
       if (!document.hidden) {
         /**
