@@ -23,19 +23,15 @@
     responsive="screen"
   >
     <n-grid-item class="cardclss" v-for="item in itemslist" :key="item.carID">
-      <n-card
-        size="small"
-        @click="redirectTo(item.carID)"
-      >
-        <div
-          class="type"
-          :style="{ background: item.labelColor }"
-        >
-          {{ item.label != "" ? item.label : "NO" }}
-        </div>
+      <n-card size="small" @click="redirectTo(item.carID)">
+        <div class="box">
+          <div class="type plus-badge" :style="{ background: item.labelColor }">
+            {{ item.label != "" ? item.label : "NO" }}
+          </div>
 
-        <div class="cartitle">
-          <n-text class="title">{{ item.carID }}</n-text>
+          <div class="cartitle">
+            <n-text class="title">{{ item.carID }}</n-text>
+          </div>
         </div>
 
         <div class="message-with-dot">实时状态：{{ item.message }}</div>
@@ -281,7 +277,6 @@ export default {
 }
 
 .type {
-  display: inline-block;
   margin-right: 5px;
   font-size: 12px;
   font-weight: 800;
@@ -345,5 +340,44 @@ export default {
 
 .arco-progress-steps-item {
   border-radius: 30px !important;
+}
+
+.plus-badge {
+  position: relative; /* 确保伪元素能正确定位 */
+  overflow: hidden; /* 防止动画溢出容器 */
+}
+
+.plus-badge::after {
+  content: ""; /* 必须设置，否则伪元素不会显示 */
+  position: absolute;
+  top: 0;
+  left: -100%; /* 开始时光条位于元素左侧外 */
+  width: 100%; /* 光条宽度为整个元素宽度 */
+  height: 100%; /* 光条高度为整个元素高度 */
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  animation: sweepLight 3s linear infinite; /* 调整时间和函数以符合需要 */
+}
+
+@keyframes sweepLight {
+  0% {
+    left: -100%; /* 动画开始位置 */
+  }
+  50% {
+    left: 100%; /* 动画中间位置，光条完全覆盖元素 */
+  }
+  100% {
+    left: 200%; /* 动画结束位置，光条移出元素右侧 */
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center; /* 确保子元素垂直居中 */
+  justify-content: left; /* 子元素水平居中（如果需要） */
 }
 </style>
