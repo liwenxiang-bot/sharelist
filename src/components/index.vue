@@ -22,7 +22,11 @@
     cols="2 s:3 m:4 l:5 xl:5 2xl:6"
     responsive="screen"
   >
-    <n-grid-item class="cardclss" v-for="item in itemslist" :key="item.carID">
+    <n-grid-item
+      class="cardclss no-select"
+      v-for="item in itemslist"
+      :key="item.carID"
+    >
       <n-card size="small" @click="redirectTo(item.carID)">
         <div class="box">
           <div class="type plus-badge" :style="{ background: item.labelColor }">
@@ -379,5 +383,12 @@ export default {
   display: flex;
   align-items: center; /* 确保子元素垂直居中 */
   justify-content: left; /* 子元素水平居中（如果需要） */
+}
+/* 禁止选择文字 */
+.no-select {
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 </style>
