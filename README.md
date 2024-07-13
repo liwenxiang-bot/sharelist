@@ -18,7 +18,7 @@ curl -sSfL https://raw.githubusercontent.com/liwenxiang-bot/sharelist/master/qui
 ![Image text](https://chatgpt-share-server.xyhelper.cn/assets/notice1-U7IuKWIa.png)
 ![Image text](https://chatgpt-share-server.xyhelper.cn/assets/notice2-umTyfMe7.png)
 
-### 使用前端框架
+### 使用前端UI框架
 ```html
 https://www.naiveui.com/
 ```
