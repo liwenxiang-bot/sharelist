@@ -58,9 +58,18 @@
     dashed
     title-placement="center"
     style="font-size: 14px"
-    v-if="itemslist.length < total"
+    v-if="itemslist.length < total && hasMoreData"
   >
     上拉加载更多
+  </n-divider>
+
+  <n-divider
+    dashed
+    title-placement="center"
+    style="font-size: 14px"
+    v-if="!hasMoreData"
+  >
+    没有更多数据了
   </n-divider>
   <n-back-top :right="20" :bottom="20" />
 </template>
