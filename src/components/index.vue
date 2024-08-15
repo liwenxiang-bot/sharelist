@@ -291,6 +291,11 @@ export default {
   margin-top: 10px;
 }
 
+.n-card {
+    border-radius: 5px;
+    background-color: rgb(187 201 217 / 20%);
+}
+
 .type {
   margin-right: 5px;
   font-size: 12px;
@@ -346,11 +351,7 @@ export default {
   color: var(--n-title-text-color);
   border-radius: 10px !important;
   margin-bottom: 10px;
-}
-
-.cardclss .n-card {
-  max-width: 100%;
-  text-align: left;
+  background-color: rgb(187 201 217 / 20%) !important;
 }
 
 .arco-progress-steps-item {
