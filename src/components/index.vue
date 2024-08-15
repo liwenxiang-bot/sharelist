@@ -345,7 +345,7 @@ export default {
   max-width: 100%;
   color: var(--n-title-text-color);
   border-radius: 10px !important;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .cardclss .n-card {
