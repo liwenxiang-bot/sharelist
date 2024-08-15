@@ -72,6 +72,7 @@
     没有更多数据了
   </n-divider>
   <n-back-top :right="20" :bottom="20" />
+  <footer v-html="footer"></footer>
 </template>
 <script lang="ts">
 function uniqueArrayObjects(arr) {
@@ -108,11 +109,12 @@ export default {
       itemslist: [],
       itemsplus: [],
       notice: "",
+      footer: "",
       total: 0,
       page: 1,
       isLoading: false,
       hasMoreData: true,
-      minPage: 50,
+      minPage: 30,
       loadingBar: null,
     };
   },
@@ -241,6 +243,7 @@ export default {
             return;
           }
           this.notice = response.data.notice;
+          this.footer = response.data.footer;
           this.total = response.data?.data?.pagination?.total ?? 0;
 
           this.page += 1;
@@ -253,7 +256,6 @@ export default {
         })
         .finally(() => {
           this.isLoading = false;
-
           this.loadingBar.finish();
         });
     },
