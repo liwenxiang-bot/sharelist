@@ -63,16 +63,16 @@
     上拉加载更多
   </n-divider>
 
-  <n-divider
+  <!-- <n-divider
     dashed
     title-placement="center"
     style="font-size: 14px"
     v-if="!hasMoreData"
   >
     没有更多数据了
-  </n-divider>
+  </n-divider> -->
   <n-back-top :right="20" :bottom="20" />
-  <footer v-html="footer"></footer>
+  <footer class="footer" v-html="footer"></footer>
 </template>
 <script lang="ts">
 function uniqueArrayObjects(arr) {
@@ -401,5 +401,14 @@ export default {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+.footer {
+  background-color: rgb(187 201 217 / 20%);
+  color: var(--n-title-text-color);
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  margin-top: 10px;
 }
 </style>
