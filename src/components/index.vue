@@ -305,10 +305,6 @@ export default {
   color: #fff;
 }
 
-.cartitle {
-  display: inline-block;
-}
-
 .message-with-dot {
   margin-top: 10px;
   margin-bottom: 5px;
@@ -321,7 +317,6 @@ export default {
 }
 
 .n-switch {
-  top: 0;
   float: right;
 }
 
