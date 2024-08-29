@@ -114,7 +114,7 @@ export default {
       page: 1,
       isLoading: false,
       hasMoreData: true,
-      minPage: 30,
+      minPage: 20,
       loadingBar: null,
     };
   },
