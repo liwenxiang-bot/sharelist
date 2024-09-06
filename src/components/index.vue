@@ -193,7 +193,7 @@ export default {
               //   item.isPlus == true
               //     ? (statusData.count / 80) * 1
               //     : (statusData.count / 500) * 1;
-              let bai = (statusData.count / 80) * 1;
+              let bai = (statusData.count / 100) * 1;
               return {
                 ...item,
                 ...endpointData,
